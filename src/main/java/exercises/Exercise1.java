@@ -21,27 +21,25 @@ public class Exercise1 {
             }
             // TODO: validate numbers is length two
 
-            // if 0 dividend than keep looping
-            if(numbers[1] == 0){
+            // Get numerator from numbers[0]
+            // Get denominator from numbers[1]
+            // Get result from divide()
+            // TODO: catch arithmetic exceptions ?
+            double result;
+            try {
+                result = divide(numbers[0], numbers[1]);
+            } catch (ArithmeticException e) {
+                // if 0 dividend than keep looping
                 System.out.println("Can not divide by 0, please try again");
                 continue;
             }
 
+            //     if successful, print result to the console
+            System.out.println(result);
+
             // If we have valid numbers and no exception was thrown,
             // we can terminate the loop
             break;
-        }
-        // Get numerator from numbers[0]
-        // Get denominator from numbers[1]
-        // Get result from divide()
-        // TODO: catch arithmetic exceptions ?
-        double result;
-        try {
-            result = divide(numbers[0], numbers[1]);
-            //     if successful, print result to the console
-             System.out.println(result);
-        } catch (ArithmeticException e) {
-            System.out.println("Unexpected exception.");
         }
     }
 
