@@ -23,11 +23,14 @@ public class Exercise1 {
             // we can terminate the loop
             break;
         }
-
+        // TODO: validate numbers is length two
         // Get numerator from numbers[0]
         // Get denominator from numbers[1]
-        // Try and get result from divide()
+        // Get result from divide()
+        // TODO: catch arithmetic exceptions ?
+        var result = divide(numbers[0], numbers[1]);
         //     if successful, print result to the console
+        System.out.println(result);
     }
 
     private static int[] getUserInputs() throws InputMismatchException {
