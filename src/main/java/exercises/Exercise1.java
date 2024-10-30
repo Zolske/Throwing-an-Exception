@@ -19,18 +19,30 @@ public class Exercise1 {
                 System.out.println("Invalid input, please try again.");
                 continue;
             }
+            // TODO: validate numbers is length two
+
+            // if 0 dividend than keep looping
+            if(numbers[1] == 0){
+                System.out.println("Can not divide by 0, please try again");
+                continue;
+            }
+
             // If we have valid numbers and no exception was thrown,
             // we can terminate the loop
             break;
         }
-        // TODO: validate numbers is length two
         // Get numerator from numbers[0]
         // Get denominator from numbers[1]
         // Get result from divide()
         // TODO: catch arithmetic exceptions ?
-        var result = divide(numbers[0], numbers[1]);
-        //     if successful, print result to the console
-        System.out.println(result);
+        double result;
+        try {
+            result = divide(numbers[0], numbers[1]);
+            //     if successful, print result to the console
+             System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("Unexpected exception.");
+        }
     }
 
     private static int[] getUserInputs() throws InputMismatchException {
