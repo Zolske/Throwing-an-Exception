@@ -44,11 +44,13 @@ public class Exercise1 {
     }
 
     private static int[] getUserInputs() throws InputMismatchException {
-        var scanner = new Scanner(System.in);
-        System.out.print("Enter divisor: ");
-        int divisor = scanner.nextInt();
-        System.out.print("Enter dividend: ");
-        int dividend = scanner.nextInt();
-        return new int[]{divisor, dividend};
+        int[] result = new int[2];
+        try (var scanner = new Scanner(System.in)) {
+            System.out.print("Enter divisor: ");
+            result[0] = scanner.nextInt();
+            System.out.print("Enter dividend: ");
+            result[1] = scanner.nextInt();
+        }
+        return result;
     }
 }
